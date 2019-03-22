@@ -1,0 +1,17 @@
+########################
+#devtools custom setting - application.properties
+########################
+#spring.devtools.livereload.enabled=true
+
+#.yml이 .properties에 비해 상대적으로 유연한 구조 가짐
+#yml은 상위 계층에 대한 표현, List 등을 완전하게 표현할 수 있음
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+
+  h2:
+    console:
+      enabled: true
+      
