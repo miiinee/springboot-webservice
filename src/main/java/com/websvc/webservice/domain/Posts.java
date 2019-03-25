@@ -19,6 +19,13 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Posts extends BaseTimeEntity {
 
+	/* Hibernate의 id생성 전략을 결정하는 useNewIdGeneratorMappings = true(spring boot 2.0)/false(1.5)
+	 * Hibernate 5.0부터 MySQL의 AUTO는 IDENTITY가 아닌 TABLE을 기본 시퀀스 전략으로 선택된다.
+	 * 즉, 1.5에선 Hibernate 5를 쓰더라도 AUTO를 따라가지 않기 때문에 IDENTITY가 선택
+	 * 2.0에선 true이므로 Hibernate 5를 그대로 따라가기 때문에 TABLE이 선택
+	 * 방안1)application.properties(yml) 설정 변경 : spring: jpa: hibernate: use-new-id-generator-mappings: false
+	 * 방안2)@GeneratedValue(strategy = GenerationType.IDENTITY)
+	 */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

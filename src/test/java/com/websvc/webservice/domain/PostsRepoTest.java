@@ -1,4 +1,4 @@
-package com.websvc.webservice.test;
+package com.websvc.webservice.domain;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;

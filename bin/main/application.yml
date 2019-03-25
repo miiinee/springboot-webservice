@@ -7,11 +7,24 @@
 #yml은 상위 계층에 대한 표현, List 등을 완전하게 표현할 수 있음
 
 spring:
-  devtools:
-    livereload:
-      enabled: true
+  profiles:
+    active: local #기본 환경 선택, app실행시 파라미터로 넘어온게 없으면 active값을 보게됨
 
+# local 환경
+---    
+spring:
+  profiles: local
+  datasource:
+#    sql-script-encoding: UTF-8
+    data: classpath:data-h2.sql #시작할 때 실행시킬 script
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
   h2:
     console:
+      enabled: true
+  devtools:
+    livereload:
       enabled: true
       

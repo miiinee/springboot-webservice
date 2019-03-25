@@ -1,5 +1,8 @@
-package com.websvc.webservice.domain;
+package com.websvc.webservice.dto;
 
+import com.websvc.webservice.domain.Posts;
+
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,5 +32,12 @@ public class PostsSaveReqDto {
                 .content(content)
                 .author(author)
                 .build();
+    }
+
+    @Builder
+    public PostsSaveReqDto(String title, String content, String author) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
     }
 }

@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.websvc.webservice.domain.PostsSaveReqDto;
-import com.websvc.webservice.repo.PostsRepo;
+import com.websvc.webservice.dto.PostsSaveReqDto;
+import com.websvc.webservice.service.PostsService;
 
 import lombok.AllArgsConstructor;
 
@@ -20,7 +20,9 @@ public class WebRestController {
 	 * 2)setter
 	 * 3)생성자
 	 ******************************/
-	private PostsRepo postsRepo;
+	private PostsService postsService;
+	
+//	private PostsRepo postsRepo;
 	
 	//@AllArgsContstuctor 로 인행 생기는 생성자 형태
 //	public WebRestController(PostsRepo postsRepo) {
@@ -34,7 +36,7 @@ public class WebRestController {
 	
 	@PostMapping("/posts")
 	public void savePosts(@RequestBody PostsSaveReqDto dto) {
-		postsRepo.save(dto.toEntity());
+		postsService.save(dto);
 	}
 	
 }
