@@ -11,6 +11,8 @@ HELP.md
 .settings
 .springBeans
 .sts4-cache
+bin/
+app/
 
 ### IntelliJ IDEA ###
 .idea
