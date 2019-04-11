@@ -27,7 +27,7 @@ spring:
   devtools:
     livereload:
       enabled: true
-      
+     
 management:
   endpoints:
     web:
