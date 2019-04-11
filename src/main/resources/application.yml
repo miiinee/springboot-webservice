@@ -28,3 +28,7 @@ spring:
     livereload:
       enabled: true
       
+management:
+  endpoints:
+    web:
+      base-path: /
